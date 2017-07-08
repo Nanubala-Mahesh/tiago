@@ -1,0 +1,16 @@
+
+  <tr>
+    <td><%= user.email %></td>/td>
+    <td class="text-center">
+        <%= link_to admin_user_path(user), class: "btn btn-default btn-sm btn-icon icon-left" do%>
+            <i class="entypo-info"></i>
+            Show
+        <%end%>
+        <%= link_to edit_admin_user_path(user), class: "btn btn-default btn-sm btn-icon icon-left" do%>
+            <i class="entypo-pencil"></i>
+            Edit
+        <%end%>
+    </td>
+
+
+  </tr>

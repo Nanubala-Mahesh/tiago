@@ -1,0 +1,14 @@
+<a href="#"><%= @user.try(:email)%></a>
+
+
+						<%= link_to admin_users_path, class: "btn btn-info" do%>
+							<i class="entypo-left-open"></i>
+							User List
+						<%end%>
+
+						<%= link_to edit_admin_user_path(@user), class: "btn btn-success" do%>
+							<i class="entypo-pencil"></i>
+							Edit
+						<%end%>
+
+

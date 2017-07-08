@@ -1,0 +1,57 @@
+<a href="#"><%= @user.try(:email)%></a>
+
+
+<%= link_to admin_users_path, class: "btn btn-info pull-right" do%>
+	<i class="entypo-left-open"></i>
+	User List
+<%end%>
+
+<%= form_for @user,url: admin_user_path(@user), html: {class:"form-horizontal form-groups-bordered validate" } do |f|%>
+
+
+
+
+	<div class="form-group">
+	<!-- <label for="field-4" class="col-sm-3 control-label">Email address</label> -->
+	<%= f.label :email ,"Email address",class: "col-sm-4 control-label"%>
+
+	<div class="col-sm-8">
+	<!-- <input type="text" class="form-control" name="email" id="field-4" data-validate="required,email" value="john@doe.com"> -->
+	<%= f.email_field :email, class: "form-control"%>
+	<!-- <span class="description">Here you will receive site notifications.</span> -->
+	</div>
+	</div>
+
+
+
+
+
+
+	<b>User roles</b>
+
+
+	<div class="panel-body">
+	<%= f.collection_check_boxes :role_ids, Role.all, :id, :name do |b|%>
+	<div class="checkbox checkbox-replace col-md-6">
+	<%=  b.check_box  %>
+	<%=  b.label('data-value': b.value) %>
+	</div>
+
+	<%end%>
+
+	</div>
+
+
+
+
+
+
+
+
+
+	<div >
+	<button type="submit" class="btn btn-success">Save Changes</button>
+	</div>
+
+
+<%end%>

@@ -1,0 +1,7 @@
+<%= f.collection_check_boxes :role_ids, Role.standard, :id, :presentation do |b|%>
+	<div class="checkbox checkbox-replace col-md-6">
+		<%=  b.check_box  %>
+		<%=  b.label('data-value': b.value) %>
+	</div>
+
+<%end%>
